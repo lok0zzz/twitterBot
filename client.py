@@ -49,8 +49,8 @@ while True:
     cot_dolar_inicio = float(cot_dolar_inicio)
     cot_dolar = float(cot_dolar)
 
-    # cot_dolar_inicio = "{:.3f}".format(cot_dolar_inicio)
-    # cot_dolar = '{:.3f}'.format(cot_dolar)
+    cot_dolar_inicio = "{:.2f}".format(cot_dolar_inicio)
+    cot_dolar = '{:.2f}'.format(cot_dolar)
 
     print(f'COTAÇÃO ANTERIOR: {cot_dolar_inicio}')
     print(f'COTAÇÃO ATUAL: {cot_dolar}\n\n')
@@ -68,11 +68,11 @@ while True:
         response = client.create_tweet(
             text=f'''
 
-            [{data_e_hora_atuais.strftime('%d/%m/%Y %H:%M')}]
+[{data_e_hora_atuais.strftime('%d/%m/%Y %H:%M')}]
 
-            📉 Dólar desceu.
+📉 Dólar desceu.
 
-            💵 R${cot_dolar} (-{variacao_descida})
+💵 R${cot_dolar} (-{round(variacao_descida)})
 
         '''
         )
@@ -86,11 +86,11 @@ while True:
         response = client.create_tweet(
             text=f'''
 
-                    [{data_e_hora_atuais.strftime('%d/%m/%Y %H:%M')}]
+[{data_e_hora_atuais.strftime('%d/%m/%Y %H:%M')}]
 
-                    📉 Dólar subiu.
+📉 Dólar subiu.
 
-                    💵 R${cot_dolar} (+{variacao_subida})
+💵 R${cot_dolar} (+{round(variacao_subida)})
 
                 '''
         )
