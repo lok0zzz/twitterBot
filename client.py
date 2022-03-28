@@ -74,8 +74,7 @@ while True:
 
             💵 R${cot_dolar} (-{variacao_descida})
 
-        ''',
-            user_auth=False
+        '''
         )
 
         print(f"https://twitter.com/user/status/{response.data['id']}")
@@ -93,8 +92,7 @@ while True:
 
                     💵 R${cot_dolar} (+{variacao_subida})
 
-                ''',
-            user_auth=False
+                '''
         )
 
         print(f"https://twitter.com/user/status/{response.data['id']}")
