@@ -72,7 +72,7 @@ while True:
 
 📉 Dólar desceu.
 
-💵 R${cot_dolar} (-{variacao_descida})
+💵 R${cot_dolar} (-{round(variacao_descida), 2})
 
         '''
         )
@@ -90,7 +90,7 @@ while True:
 
 📉 Dólar subiu.
 
-💵 R${cot_dolar} (+{variacao_subida})
+💵 R${cot_dolar} (+{round(variacao_subida), 2})
 
                 '''
         )
