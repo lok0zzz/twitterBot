@@ -65,7 +65,8 @@ while True:
 
     if cot_dolar_inicio > cot_dolar:
         print('OCORREU UMA ALTERAÇÃO... POSTANDO')
-        client.create_tweet(f'''
+        response = client.create_tweet(
+            text=f'''
 
             [{data_e_hora_atuais.strftime('%d/%m/%Y %H:%M')}]
 
@@ -73,20 +74,30 @@ while True:
 
             💵 R${cot_dolar} (-{variacao_descida})
 
-        ''')
+        ''',
+            user_auth=False
+        )
+
+        print(f"https://twitter.com/user/status/{response.data['id']}")
+
         cot_dolar_inicio = cot_dolar
 
     elif cot_dolar_inicio < cot_dolar:
         print('OCORREU UMA ALTERAÇÃO... POSTANDO')
-        client.create_tweet(f'''
+        response = client.create_tweet(
+            text=f'''
 
-                [{datetime.now().strftime('%d/%m/%Y %H:%M')}]
+                    [{data_e_hora_atuais.strftime('%d/%m/%Y %H:%M')}]
 
-                📈 Dólar subiu.
+                    📉 Dólar subiu.
 
-                💵 R${cot_dolar} (+{variacao_descida})
+                    💵 R${cot_dolar} (+{variacao_subida})
 
-            ''')
+                ''',
+            user_auth=False
+        )
+
+        print(f"https://twitter.com/user/status/{response.data['id']}")
 
         cot_dolar_inicio = cot_dolar
 
