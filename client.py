@@ -17,7 +17,7 @@ try:
 
     req_inicial_dic = req_inicial.json()
 
-    cot_dolar_inicio = req_inicial_dic['USDBRL']['bid']
+    cot_dolar_inicio = req_inicial_dic['USD']['bid']
 
 except Exception as e:
     print('[ERROR] Ocorreu algum erro na requisição da API.')
@@ -36,7 +36,7 @@ while True:
 
         requisicao_dic = requisicao.json()
 
-        cot_dolar = requisicao_dic['USDBRL']['bid']
+        cot_dolar = requisicao_dic['USD']['bid']
 
     except TimeoutError:
         print(datetime.now().strftime('%d/%m/%Y %H:%M:%S - Timeout Error'))
