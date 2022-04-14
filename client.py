@@ -20,6 +20,7 @@ try:
     req_inicial = requests.get('http://economia.awesomeapi.com.br/json/last/USD-BRL')
     req_inicial_dic = req_inicial.json()
     cot_dolar_inicio = req_inicial_dic['USDBRL']['bid']
+    print(' ESTAMOS ONLINE ')
 
 except Exception as e:
     print('[ERROR] Ocorreu algum erro na requisição da API.')
@@ -88,6 +89,8 @@ while True:
 
 • [{data_e_hora_atuais.strftime('%d/%m/%Y %H:%M')}]
 
+
+📈 Dolár subiu
 
 💵 Foi para: R${cot_dolar} 
 🤓 Variação de: R$-{round(variacao_subida, 2)}
