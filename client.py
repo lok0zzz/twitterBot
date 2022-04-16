@@ -30,6 +30,7 @@ except Exception as e:
 while True:
     i = 0
     while i < 1:
+        print('\n')
         time.sleep(60)
         i = i + 1
 
@@ -50,20 +51,25 @@ while True:
         cot_dolar = float(cot_dolar)
 
     except NameError as E:
-        datetime.now().strftime('%d/%m/%Y %H:%M:%S - ERROR')
+        datetime.now().strftime('%d/%m/%Y %H:%M:%S - Name Error')
 
     except Exception as E:
         print(datetime.now().strftime('%d/%m/%Y %H:%M:%S - Error'))
+        print(E)
+
+    # Pegar data e hora atuais.
+    data_e_hora_atuais = datetime.now()
 
     cot_dolar_inicio = "{:.2f}".format(cot_dolar_inicio)
     cot_dolar = '{:.2f}'.format(cot_dolar)
 
+    print(data_e_hora_atuais.strftime('\n\n%d/%m/%Y %H:%M COTAÇÃO:'))
+    print(f'\nCOTAÇÃO ANTERIOR: {cot_dolar_inicio}')
+    print(f'COTAÇÃO ATUAL: {cot_dolar}\n\n')
+
     # Calculando variação.
     variacao_descida = float(cot_dolar_inicio) - float(cot_dolar)
     variacao_subida = float(cot_dolar) - float(cot_dolar_inicio)
-
-    # Pegar data e hora atuais.
-    data_e_hora_atuais = datetime.now()
 
     if cot_dolar_inicio > cot_dolar:
         print('OCORREU UMA ALTERAÇÃO... POSTANDO')
@@ -93,7 +99,7 @@ while True:
 📈 Dolár subiu
 
 💵 Foi para: R${cot_dolar} 
-🤓 Variação de: R$-{round(variacao_subida, 2)}
+🤓 Variação de: R$+{round(variacao_subida, 2)}
 
                   '''
         )
