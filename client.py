@@ -108,3 +108,6 @@ while True:
 
     else:
         pass
+
+
+# ANDRADE CONTINUA ESTUDANDO PROGRAMAÇÃO
